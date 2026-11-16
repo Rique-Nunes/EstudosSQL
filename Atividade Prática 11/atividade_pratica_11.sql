@@ -49,7 +49,11 @@ SELECT * FROM clientes;
 SELECT synonym_name, table_owner, table_name, db_link FROM user_synonyms ORDER BY synonym_name;
 
 -- Exercício 1: Exemplo de concessão de privilégio e criação de sinônimo privado em multi-schema
--- GRANT SELECT ON hr.employees TO analista_bi; CREATE OR REPLACE SYNONYM func FOR hr.employees; SELECT * FROM func;
+GRANT SELECT ON hr.employees TO analista_bi; 
+
+CREATE OR REPLACE SYNONYM func FOR hr.employees; 
+
+SELECT * FROM func;
 
 -- Exercício 2 (Justificativa): A resolução de nomes prioriza objetos locais do próprio schema antes de recorrer a sinônimos privados e sinônimos públicos.
 
